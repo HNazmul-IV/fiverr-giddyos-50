@@ -10,7 +10,7 @@
 		</p>
 	</section>
 	<section class="flex flex-wrap justify-between">
-		<div>
+		<div class="footer-part">
 			<p class="font-medium text-xl">Platform</p>
 			<ul>
 				<li>Platfrom Review</li>
@@ -20,7 +20,7 @@
 				<li>Platform status</li>
 			</ul>
 		</div>
-		<div>
+		<div class="footer-part">
 			<p class="font-medium text-xl">Why Scripts</p>
 			<ul>
 				<li>Why Choose us</li>
@@ -28,7 +28,7 @@
 				<li>Customer Success</li>
 			</ul>
 		</div>
-		<div>
+		<div class="footer-part">
 			<p class="font-medium text-xl">Customers</p>
 			<ul>
 				<li>Success Center</li>
@@ -36,7 +36,7 @@
 				<li>Community</li>
 			</ul>
 		</div>
-		<div>
+		<div class="footer-part">
 			<p class="font-medium text-xl">Help & Support</p>
 			<ul>
 				<li>Help Center</li>
@@ -52,11 +52,11 @@
 			©️2023 <span class="text-yellow-300 uppercase">Script</span>|All right reserved.
 		</p>
 		<div class="flex gap-2">
-			<img class="w-4 h-4" src={facebookSvg} alt="social-media" />
-			<img class="w-4 h-4" src={instagramSvg} alt="social-media" />
-			<img class="w-4 h-4" src={twitterSvg} alt="social-media" />
-			<img class="w-4 h-4" src={linkdinSvg} alt="social-media" />
-			<img class="w-4 h-4" src={tiktokSvg} alt="social-media" />
+			<a href="f"> <img class="w-4 h-4" src={facebookSvg} alt="social-media" /></a>
+			<a href="i"> <img class="w-4 h-4" src={instagramSvg} alt="social-media" /></a>
+			<a href="t"><img class="w-4 h-4" src={twitterSvg} alt="social-media" /></a>
+			<a href="l"> <img class="w-4 h-4" src={linkdinSvg} alt="social-media" /></a>
+			<a href="t"> <img class="w-4 h-4" src={tiktokSvg} alt="social-media" /></a>
 		</div>
 	</section>
 </footer>
@@ -64,5 +64,10 @@
 <style>
 	footer {
 		background-color: #0a0a0a;
+	}
+	.footer-part {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
 	}
 </style>

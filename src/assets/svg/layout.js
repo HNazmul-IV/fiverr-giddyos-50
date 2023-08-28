@@ -11,7 +11,8 @@ import instagramSvg from './Instagram.svg';
 import linkdinSvg from './LinkedIn.svg';
 import tiktokSvg from './Tiktok.svg';
 import twitterSvg from './Twitter.svg';
-
+import moonSvg from './dark_mode_black.svg';
+import sunsvg from './light_mode_black.svg';
 export {
 	vector,
 	keySvg,
@@ -25,5 +26,7 @@ export {
 	instagramSvg,
 	linkdinSvg,
 	twitterSvg,
-	tiktokSvg
+	tiktokSvg,
+	moonSvg,
+	sunsvg
 };
