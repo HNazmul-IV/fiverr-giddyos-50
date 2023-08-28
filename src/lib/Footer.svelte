@@ -26,7 +26,7 @@
 				<h3 class="font-medium text-2xl mb-6">Why Scripts</h3>
 				<ul>
 					<li>Why Choose us</li>
-					<li>Customer Stories</li>
+					<li>Customer StCuies</li>
 					<li>Customer Success</li>
 				</ul>
 			</div>
@@ -68,5 +68,10 @@
 <style>
 	footer {
 		background-color: #0a0a0a;
+	}
+	.footer-part {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
 	}
 </style>
