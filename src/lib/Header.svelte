@@ -1,8 +1,7 @@
 <script lang="ts">
-	import { Icon } from 'flowbite-svelte-icons';
-	import { Button } from 'flowbite-svelte';
 	import IMG_HERO_BG from '$assets/img/header-bg.png';
 	import IMG_AVATAR from '$assets/img/user-avatar.png';
+
 	import { onMount } from 'svelte';
 	import { register } from 'swiper/element/bundle';
 
@@ -12,14 +11,13 @@
 	});
 </script>
 
-<header class="w-screen h-screen bg-cover" style="background-image: url({IMG_HERO_BG});">
+<header class="max-w-screen h-screen bg-cover" style="background-image: url({IMG_HERO_BG});">
 	<div class="">
-		<swiper-container pagination={true} navigation={true} class="h-screen  py-24">
+		<swiper-container pagination={true} navigation={true} class="h-screen py-24">
 			{#each [10, 20, 30, 40] as i}
 				<swiper-slide class="border">
 					<div class="my-container h-full">
 						<div class="border h-full flex flex-col justify-center">
-
 							<div class="flex mb-10">
 								<button class="btn bg-white">🔑 Key </button>
 								<button class="btn bg-green-500 text-white">Mobile Friendly</button>
@@ -80,6 +78,8 @@
 			{/each}
 		</swiper-container>
 	</div>
+
+	<div />
 </header>
 
 <style>
