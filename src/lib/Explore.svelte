@@ -2,51 +2,31 @@
 	import { fakeData } from '../DB/data';
 	import Card from './Card.svelte';
 	import CardAd from './CardAd.svelte';
+	import OnOffSwitch from './OnOffSwitch.svelte';
 </script>
 
-<main class="p-[30px]">
-	<p class="font-medium text-[40px] text-center">Explore Scripts</p>
-	<section class="bg-[#F8F8F8] flex flex-col gap-[30px] px-2 py-4">
-		<div class="flex flex-wrap justify-center md:justify-start gap-[20px]">
-			<div class="flex gap-[10px]">
-				<label class="border border-gray-500 shadow-lg relative flex w-[100px] h-7 rounded-xl">
-					<input type="checkbox" class="sr-only" checked />
-
-					<div class="absolute inset-0 flex justify-between items-center">
-						<span class="btn-text">OFF</span>
-						<span class="btn-text">ON</span>
-					</div>
-				</label>
-				<p class="text">Mobile Scripts Only</p>
+<section class="p-[30px]">
+	<p class="font-medium text-[40px] text-center py-16">Explore Scripts</p>
+	<div class=" my-container bg-[#F8F8F8] flex flex-col gap-[30px] !p-8 rounded-2xl">
+		<div class="flex flex-wrap justify-center md:justify-start gap-[30px] text-secondary-dark">
+			<div class="flex items-center gap-[10px]">
+				<OnOffSwitch />
+				<p class="text-base">Mobile Scripts Only</p>
 			</div>
-			<div class="flex gap-[10px]">
-				<label class="border border-gray-500 shadow-lg relative flex w-[100px] h-7 rounded-xl">
-					<input type="checkbox" class="sr-only" checked />
-
-					<div class="absolute inset-0 flex justify-between items-center">
-						<span class="btn-text">OFF</span>
-						<span class="btn-text">ON</span>
-					</div>
-				</label>
-				<p class="text">Hide Paid Scripts</p>
+			<div class="flex items-center gap-[10px]">
+				<OnOffSwitch />
+				<p class="text-base">Hide Paid Scripts</p>
 			</div>
-			<div class="flex gap-[10px]">
-				<label class="border border-gray-500 shadow-lg relative flex w-[100px] h-7 rounded-xl">
-					<input type="checkbox" class="sr-only" />
-
-					<div class="absolute inset-0 flex justify-between items-center">
-						<span class="btn-text">OFF</span>
-						<span class="btn-text">ON</span>
-					</div>
-				</label>
-				<p class="text">Hide Patched Scripts</p>
+			<div class="flex items-center gap-[10px]">
+				<OnOffSwitch />
+				<p class="text-base">Hide Patched Scripts</p>
 			</div>
 		</div>
 		<div class="flex gap-[30px]">
 			<div class="relative w-full">
 				<input
 					type="text"
-					class=" w-full border px-4 py-2 pr-10 focus:outline-none focus:ring focus:border-blue-300 rounded-lg"
+					class=" w-full border-gray-200 px-4 h-full py-2 pr-10 focus:outline-none focus:ring-transparent  bg-[#FFFFFF24] focus:border-blue-300 focus:bg-white rounded-lg"
 					placeholder="Search..."
 				/>
 				<div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
@@ -66,14 +46,14 @@
 					</svg>
 				</div>
 			</div>
-			<select class="h-12 w-40 rounded-xl px-4 py-3">
+			<select class="h-12 w-40 rounded-xl border-0 px-4 py-2 bg-[#0000000A] text-secondary-dark">
 				<option>Latest</option>
 				<option>Tranding</option>
 				<option>Most </option>
 			</select>
 		</div>
-		<!-- ///////////////    map -->
-		<div class="flex flex-wrap justify-center gap-[30px]">
+
+		<div class="grid grid-cols-3 gap-5">
 			{#each fakeData as data, index}
 				<Card {data} />
 
@@ -116,20 +96,18 @@
 				</svg>
 			</a>
 		</nav>
-	</section>
-</main>
+	</div>
+</section>
 
 <style>
 	.text {
 		font-size: 16px;
-		font-family: Aeonik;
 		color: #555;
 	}
 	.btn-text {
 		font-size: 13.5px;
 		line-height: 22px;
 		font-weight: 500;
-		font-family: Aeonik;
 		text-align: center;
 		height: 24px;
 		width: 50px;
@@ -144,7 +122,7 @@
 		border-radius: 10px;
 	}
 	input:checked + .absolute span:first-child {
-		background-color: white;
+		background-color: transparent;
 		border-radius: 10px;
 	}
 </style>

@@ -1,6 +1,7 @@
 <script lang="ts">
+	import { AccordionItem, Accordion } from 'flowbite-svelte';
 	import { onMount } from 'svelte';
-
+	import FAQ_AD_PLACEHOLDER from '../assets/img/faq-ads-placeholder.png';
 	let openStates: boolean[] = [];
 
 	const toggleAccordion = (index: number) => {
@@ -10,7 +11,6 @@
 	onMount(() => {
 		openStates = Array(faqs.length).fill(false); // Initialize all FAQs to be closed
 		openStates[0] = true; // Initialize the first FAQ to be open
-		console.log('🚀 ~ file: Faq.svelte:13 ~ onMount ~ openStates:', openStates);
 	});
 
 	let faqs: FAQItem[] = [
@@ -42,56 +42,50 @@
 	];
 </script>
 
-<main class="p-16 flex flex-col items-center relative gap-10">
-	<section>
-		<p class="text-2xl font-extrabold">Frequently Asked Questions</p>
-		<p class="text-base">
-			Mauris vel et neque dictumst commodo. Vulputate eu tincidunt morbi enim sociis bibendum amet.
-		</p>
-	</section>
-	<div class="flex flex-wrap justify-center gap-3">
-		{#each faqs as faq, index}
-			<div
-				class={`border lg:w-[550px] w-72 rounded-xl p-4 ${openStates[index] ? 'h-auto' : 'h-11'}`}
-			>
-				<button
-					class={`flex justify-between items-center w-full `}
-					on:click={() => toggleAccordion(index)}
-				>
-					<p class="font-normal lg:text-2xl">
-						{faq.title}
-					</p>
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						fill="none"
-						viewBox="0 0 24 24"
-						stroke-width="1.5"
-						stroke="currentColor"
-						class="w-6 h-6 transform transition-transform"
-					>
-						<path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
-					</svg>
-				</button>
+<section class="py-16 relative gap-10">
+	<div class="my-container">
+		<div class="title">
+			<p class="text-4xl font-bold">Frequently Asked Questions</p>
+			<p class="text-base mt-5">
+				Mauris vel et neque dictumst commodo. Vulputate eu tincidunt morbi enim sociis bibendum
+				amet.
+			</p>
+		</div>
 
-				{#if openStates[index]}
-					<div class="p-3">{faq.content}</div>
-				{/if}
-			</div>
-		{/each}
-		<section class="ad">
-			<div class="flex md:flex-row flex-col items-center text">
-				<div class="image">
-					<div id="gradient" />
-					<img src="https://picsum.photos/600/600" alt="" />
+		<div class="accordions mt-16">
+			<div class="grid grid-cols-2 gap-x-16">
+				<div class="left-side-accordion">
+					<Accordion class="" flush>
+						{#each faqs.slice(0, 2) as data}
+							<AccordionItem>
+								<span slot="header">{data.title}</span>
+								<div class="">
+									{data.content}
+								</div>
+							</AccordionItem>
+						{/each}
+					</Accordion>
 				</div>
+				<div class="right-side-accordion">
+					<Accordion class="" flush>
+						{#each faqs.slice(2) as data}
+							<AccordionItem>
+								<span slot="header" class="text-secondary-dark">{data.title}</span>
+								<div class="">
+									{data.content}
+								</div>
+							</AccordionItem>
+						{/each}
+					</Accordion>
 
-				<div class="py-4 md:py-0">
-					<p class="text-center">Advertisement Placeholder</p>
+					<div class="mt-2">
+						<img src={FAQ_AD_PLACEHOLDER} class="w-full" alt="" />
+					</div>
 				</div>
 			</div>
-		</section>
+		</div>
 	</div>
-</main>
+</section>
 
 <style>
 	.border {

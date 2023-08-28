@@ -11,7 +11,8 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				primary: colors['sky']
+				primary: colors['sky'],
+				'secondary-dark': '#555555'
 			}
 		}
 	},

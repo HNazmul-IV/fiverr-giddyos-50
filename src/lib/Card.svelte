@@ -3,7 +3,7 @@
 	export let data: DataItem;
 </script>
 
-<section class="flex flex-col gap-y-3 px-3 py-2 border">
+<article class="flex bg-white  rounded-lg flex-col p-5 border gap-y-5">
 	<div class="flex justify-start items-center gap-4">
 		<img class="w-12 h-12 rounded-lg" src={data.user.image} alt="" />
 		<div class="flex flex-col gap-2">
@@ -24,14 +24,13 @@
 		</div>
 	</div>
 	<div class="">
-		<img class="h-64 w-full rounded-xl" src={data.image} alt="" />
+		<img class="h-64 w-full object-cover rounded-xl" src={data.image} alt="" />
 	</div>
 	<div class="flex gap-2">
-		<button class="bg-yellow-300">Key System</button><button class="bg-[#3FBA73]"
-			>Mobile Friendly</button
-		>
+		<button class="btn text-[15px]  bg-yellow-400 text-white !py-2">Key System</button>
+		<button class=" btn  text-[15px] flex-shrink-0 bg-[#3FBA73] text-white !py-2">Mobile Friendly</button>
 	</div>
-	<p class="post-text">{data.post}</p>
+	<p class="text-xl">{data.post}</p>
 	<div class="">
 		<div class=" flex items-center gap-[10px]">
 			<div class="flex items-center gap-[10px]">
@@ -44,36 +43,10 @@
 			</div>
 		</div>
 	</div>
-</section>
+</article>
 
-<style>
-	section {
-		width: 394px;
-		height: 508px;
-		border-radius: 10px;
-		background: #fff;
-	}
-
-	button {
-		width: 127px;
-		height: 34px;
-		border-radius: 10px;
-		padding: 8px, 15px, 8px, 15px;
-	}
-	.post-text {
-		color: var(--black, #0a0a0a);
-		font-family: Aeonik;
-		font-size: 20px;
-		font-style: normal;
-		font-weight: 400;
-		line-height: normal;
-	}
+<style lang="postcss">
 	.small-text {
-		color: var(--secondary-dark, #555);
-		font-family: Aeonik;
-		font-size: 16px;
-		font-style: normal;
-		font-weight: 400;
-		line-height: normal;
+		@apply text-sm;
 	}
 </style>

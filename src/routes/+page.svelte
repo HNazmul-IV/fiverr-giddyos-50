@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Advertisement from '$lib/Advertisement.svelte';
 
-	import Expole from '$lib/Expole.svelte';
+	import Explore from '$lib/Explore.svelte';
 	import Faq from '$lib/Faq.svelte';
 	import Footer from '$lib/Footer.svelte';
 	import Header from '$lib/Header.svelte';
@@ -9,6 +9,6 @@
 
 <Header />
 <Advertisement />
-<Expole />
+<Explore />
 <Faq />
 <Footer />
