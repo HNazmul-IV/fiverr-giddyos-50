@@ -1,4 +1,5 @@
 <script>
+	import { Icon, icons } from 'flowbite-svelte-icons';
 	import { fakeData } from '../DB/data';
 	import Card from './Card.svelte';
 	import CardAd from './CardAd.svelte';
@@ -7,7 +8,7 @@
 
 <section class="">
 	<p class="font-medium text-[40px] text-center py-16">Explore Scripts</p>
-	<div class="my-container bg-[#F8F8F8] flex flex-col gap-[30px] md!p-8 rounded-2xl">
+	<div class="my-container bg-[#F8F8F8] flex flex-col gap-[30px] md:!p-8 rounded-2xl">
 		<div class="flex flex-wrap justify-center md:justify-start gap-[30px] text-secondary-dark">
 			<div class="flex items-center gap-[10px]">
 				<OnOffSwitch />
@@ -26,7 +27,7 @@
 			<div class="relative w-full">
 				<input
 					type="text"
-					class=" w-full border-gray-200 px-4 h-full py-2 pr-10 focus:outline-none focus:ring-transparent  bg-[#FFFFFF24] focus:border-blue-300 focus:bg-white rounded-lg"
+					class=" w-full border-gray-200 px-4 h-full py-2 pr-10 focus:outline-none focus:ring-transparent bg-[#FFFFFF24] focus:border-blue-300 focus:bg-white rounded-lg"
 					placeholder="Search..."
 				/>
 				<div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
@@ -53,7 +54,7 @@
 			</select>
 		</div>
 
-		<div class="grid  grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+		<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
 			{#each fakeData as data, index}
 				<Card {data} />
 
@@ -62,67 +63,28 @@
 				{/if}
 			{/each}
 		</div>
-		<nav aria-label="Pagination" class="flex justify-center items-center text-gray-600">
-			<a href="/" class="p-2 mr-4 rounded hover:bg-gray-100">
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					class="h-6 w-6"
-					fill="none"
-					viewBox="0 0 24 24"
-					stroke="currentColor"
-				>
-					<path
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						stroke-width="2"
-						d="M15 19l-7-7 7-7"
-					/>
-				</svg>
-			</a> <a href="/" class="px-4 py-2 rounded hover:bg-gray-100"> 1 </a>
-			<a href="/" class="px-4 py-2 rounded bg-gray-200 text-gray-900 font-medium hover:bg-gray-100">
-				2
-			</a> <a href="/" class="px-4 py-2 rounded hover:bg-gray-100"> 3 </a>
-			<a href="/" class="px-4 py-2 rounded hover:bg-gray-100"> ... </a>
-			<a href="/" class="px-4 py-2 rounded hover:bg-gray-100"> 9 </a>
-			<a href="/" class="p-2 ml-4 rounded hover:bg-gray-100">
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					class="h-6 w-6"
-					fill="none"
-					viewBox="0 0 24 24"
-					stroke="currentColor"
-				>
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-				</svg>
-			</a>
-		</nav>
+
+		<div class="flex justify-center text-secondary-dark gap-2">
+			<button class="prev inline-flex pagination-button items-center">
+				<Icon name={'chevron-left-outline'} size="sm" class="text-gray-500 mr-2" />
+				<span>Prev</span>
+			</button>
+			{#each ['1', '2', '3', '3', '..', '8'] as data}
+				<button class="pagination-button" class:active={data === '2'}>{data}</button>
+			{/each}
+			<button class="prev inline-flex pagination-button items-center">
+				<span>Next</span>
+				<Icon name={'chevron-right-outline'} size="sm" class="text-gray-500 ml-2" />
+			</button>
+		</div>
 	</div>
 </section>
 
-<style>
-	.text {
-		font-size: 16px;
-		color: #555;
+<style lang="postcss">
+	.pagination-button {
+		@apply py-1 px-4 rounded bg-zinc-200 text-black hover:bg-zinc-300;
 	}
-	.btn-text {
-		font-size: 13.5px;
-		line-height: 22px;
-		font-weight: 500;
-		text-align: center;
-		height: 24px;
-		width: 50px;
-		transition: background-color 0.3s ease-in-out, border-radius 0.3s linear;
-	}
-	.absolute span:first-child {
-		background-color: red;
-		border-radius: 10px;
-	}
-	input:checked + .absolute span:last-child {
-		background-color: #22c55e;
-		border-radius: 10px;
-	}
-	input:checked + .absolute span:first-child {
-		background-color: transparent;
-		border-radius: 10px;
+	.pagination-button.active {
+		@apply bg-zinc-700 text-white;
 	}
 </style>

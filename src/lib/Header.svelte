@@ -11,9 +11,19 @@
 	});
 </script>
 
-<header class="max-w-screen h-[600px]  md:h-screen bg-cover" style="background-image: url({IMG_HERO_BG});">
+<header
+	class="max-w-screen h-[600px] md:h-screen bg-cover"
+	style="background-image: url({IMG_HERO_BG});"
+>
 	<div class="h-full">
-		<swiper-container pagination={true} navigation={true} class="h-full md:h-screen  md:py-24">
+		<swiper-container
+			pagination={true}
+			pagination-clickable={true}
+			navigation={true}
+			loop={true}
+			autoplay={true}
+			class="h-full md:h-screen md:py-24"
+		>
 			{#each [10, 20, 30, 40] as i}
 				<swiper-slide class="">
 					<div class="my-container h-full">
@@ -23,9 +33,13 @@
 								<button class="btn bg-green-500 text-white">Mobile Friendly</button>
 							</div>
 							<div class="mb-10 md:w-2/3 text-center md:text-left">
-								<h1 class="text-4xl md:text-6xl text-white font-bold">Dictum vitae lectus sed gravida amet.</h1>
+								<h1 class="text-4xl md:text-6xl text-white font-bold">
+									Dictum vitae lectus sed gravida amet.
+								</h1>
 							</div>
-							<div class="flex text-white justify-center md:justify-start gap-x-4 items-center mb-7">
+							<div
+								class="flex text-white justify-center md:justify-start gap-x-4 items-center mb-7"
+							>
 								<div class="">
 									<img src={IMG_AVATAR} class="rounded-md inline-block" alt="" />
 									<span class="ml-1">Username</span>
@@ -47,7 +61,7 @@
 								</div>
 							</div>
 							<div class="text-center md:text-left">
-								<button class="inline-flex download-button  text-white px-2 py-3 gap-2">
+								<button class="inline-flex download-button text-white px-2 py-3 gap-2">
 									<span>Download Now</span>
 
 									<svg
@@ -88,9 +102,22 @@
 	</div>
 </section>
 
-<style>
+<style lang="postcss">
 	.download-button {
 		border-radius: 10px;
 		background: linear-gradient(135deg, #fd6e6a 0%, #ffc600 100%);
+	}
+	swiper-container::part(pagination) {
+		@apply max-w-[1270px] mx-auto   px-5 left-1/2 transform -translate-x-1/2 text-left;
+	}
+	swiper-container::part(bullet) {
+		@apply w-3 h-2 rounded bg-white opacity-100 transition-all;
+	}
+	swiper-container::part(bullet-active) {
+		@apply w-10 h-2 rounded bg-white opacity-100 transition-all;
+	}
+	swiper-container::part(button-prev),
+	swiper-container::part(button-next) {
+		@apply bg-white p-3 w-5 h-5 rounded-full text-secondary-dark hover:bg-white/80;
 	}
 </style>

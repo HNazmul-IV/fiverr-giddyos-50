@@ -2,6 +2,7 @@
 	import { AccordionItem, Accordion } from 'flowbite-svelte';
 	import { onMount } from 'svelte';
 	import FAQ_AD_PLACEHOLDER from '../assets/img/faq-ads-placeholder.png';
+	import { Icon } from 'flowbite-svelte-icons';
 	let openStates: boolean[] = [];
 
 	const toggleAccordion = (index: number) => {
@@ -59,6 +60,12 @@
 						{#each faqs.slice(0, 2) as data}
 							<AccordionItem>
 								<span slot="header">{data.title}</span>
+								<svelte:fragment slot="arrowup">
+									<Icon name="minus-outline" class="focus:outline-none" />
+								</svelte:fragment>
+								<svelte:fragment slot="arrowdown">
+									<Icon name="plus-outline" class="focus:outline-none" />
+								</svelte:fragment>
 								<div class="">
 									{data.content}
 								</div>
@@ -71,6 +78,13 @@
 						{#each faqs.slice(2) as data}
 							<AccordionItem>
 								<span slot="header" class="text-secondary-dark">{data.title}</span>
+								<svelte:fragment slot="arrowup">
+									<Icon name="minus-outline" class="focus:outline-none" />
+								</svelte:fragment>
+								<svelte:fragment slot="arrowdown">
+									<Icon name="plus-outline" class="focus:outline-none" />
+								</svelte:fragment>
+
 								<div class="">
 									{data.content}
 								</div>
@@ -87,64 +101,4 @@
 	</div>
 </section>
 
-<style>
-	.border {
-		border: 1px solid #e2e8f0;
-	}
-	.ad {
-		width: 526px;
-		max-width: 100%;
-		margin: 0 auto;
-	}
-	#gradient {
-		background-image: linear-gradient(
-			204.34deg,
-			rgba(45, 43, 183, 0.291) 61.59%,
-			rgba(239, 156, 32, 0.3) 107.9%
-		);
-		height: 100%;
-		width: 100%;
-		top: 0;
-		left: 0;
-		position: absolute;
-	}
-	.image {
-		background-image: linear-gradient(#2d2bb7f7, #ef9c20);
-		width: 100%;
-		height: 100%;
-		position: relative;
-		clip-path: polygon(0 0, 100% 0%, 60% 100%, 0% 100%);
-	}
-	.image img {
-		height: 100%;
-		width: 100%;
-		object-fit: cover;
-	}
-	.text {
-		background-image: linear-gradient(#fd6e6a, #ffc600);
-	}
-	.text p {
-		position: relative;
-		font-size: 24px;
-		display: inline-block;
-		font-family: Rubik;
-		color: #fff;
-		text-align: left;
-		max-width: 70%; /* Adjusted max-width for responsiveness */
-		margin: 0 auto; /* Center the text horizontally */
-	}
-	@media (max-width: 768px) {
-		.ad {
-			height: auto;
-			width: 100%;
-		}
-		.image {
-			clip-path: polygon(0 0, 100% 0, 100% 78%, 0 55%);
-			height: auto; /* Allow the image to adjust its height based on content */
-		}
-		.text p {
-			font-size: 18px;
-			text-align: center;
-		}
-	}
-</style>
+<style></style>
