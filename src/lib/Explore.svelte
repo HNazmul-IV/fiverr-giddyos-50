@@ -5,9 +5,9 @@
 	import OnOffSwitch from './OnOffSwitch.svelte';
 </script>
 
-<section class="p-[30px]">
+<section class="">
 	<p class="font-medium text-[40px] text-center py-16">Explore Scripts</p>
-	<div class=" my-container bg-[#F8F8F8] flex flex-col gap-[30px] !p-8 rounded-2xl">
+	<div class="my-container bg-[#F8F8F8] flex flex-col gap-[30px] md!p-8 rounded-2xl">
 		<div class="flex flex-wrap justify-center md:justify-start gap-[30px] text-secondary-dark">
 			<div class="flex items-center gap-[10px]">
 				<OnOffSwitch />
@@ -53,7 +53,7 @@
 			</select>
 		</div>
 
-		<div class="grid grid-cols-3 gap-5">
+		<div class="grid  grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
 			{#each fakeData as data, index}
 				<Card {data} />
 
@@ -63,7 +63,7 @@
 			{/each}
 		</div>
 		<nav aria-label="Pagination" class="flex justify-center items-center text-gray-600">
-			<a href="#" class="p-2 mr-4 rounded hover:bg-gray-100">
+			<a href="/" class="p-2 mr-4 rounded hover:bg-gray-100">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					class="h-6 w-6"
@@ -78,13 +78,13 @@
 						d="M15 19l-7-7 7-7"
 					/>
 				</svg>
-			</a> <a href="#" class="px-4 py-2 rounded hover:bg-gray-100"> 1 </a>
-			<a href="#" class="px-4 py-2 rounded bg-gray-200 text-gray-900 font-medium hover:bg-gray-100">
+			</a> <a href="/" class="px-4 py-2 rounded hover:bg-gray-100"> 1 </a>
+			<a href="/" class="px-4 py-2 rounded bg-gray-200 text-gray-900 font-medium hover:bg-gray-100">
 				2
-			</a> <a href="#" class="px-4 py-2 rounded hover:bg-gray-100"> 3 </a>
-			<a href="#" class="px-4 py-2 rounded hover:bg-gray-100"> ... </a>
-			<a href="#" class="px-4 py-2 rounded hover:bg-gray-100"> 9 </a>
-			<a href="#" class="p-2 ml-4 rounded hover:bg-gray-100">
+			</a> <a href="/" class="px-4 py-2 rounded hover:bg-gray-100"> 3 </a>
+			<a href="/" class="px-4 py-2 rounded hover:bg-gray-100"> ... </a>
+			<a href="/" class="px-4 py-2 rounded hover:bg-gray-100"> 9 </a>
+			<a href="/" class="p-2 ml-4 rounded hover:bg-gray-100">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					class="h-6 w-6"

@@ -53,7 +53,7 @@
 		</div>
 
 		<div class="accordions mt-16">
-			<div class="grid grid-cols-2 gap-x-16">
+			<div class="grid md:grid-cols-2 gap-x-16">
 				<div class="left-side-accordion">
 					<Accordion class="" flush>
 						{#each faqs.slice(0, 2) as data}

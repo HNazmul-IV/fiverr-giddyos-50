@@ -1,7 +1,7 @@
 <script lang="ts">
 	import IMG_HERO_BG from '$assets/img/header-bg.png';
 	import IMG_AVATAR from '$assets/img/user-avatar.png';
-
+	import HEADER_ADD_PLACEHOLDER from '$assets/img/header-adplace-holder.png';
 	import { onMount } from 'svelte';
 	import { register } from 'swiper/element/bundle';
 
@@ -11,21 +11,21 @@
 	});
 </script>
 
-<header class="max-w-screen h-screen bg-cover" style="background-image: url({IMG_HERO_BG});">
-	<div class="">
-		<swiper-container pagination={true} navigation={true} class="h-screen py-24">
+<header class="max-w-screen h-[600px]  md:h-screen bg-cover" style="background-image: url({IMG_HERO_BG});">
+	<div class="h-full">
+		<swiper-container pagination={true} navigation={true} class="h-full md:h-screen  md:py-24">
 			{#each [10, 20, 30, 40] as i}
-				<swiper-slide class="border">
+				<swiper-slide class="">
 					<div class="my-container h-full">
-						<div class="border h-full flex flex-col justify-center">
-							<div class="flex mb-10">
+						<div class=" h-full flex flex-col justify-center">
+							<div class="flex mb-10 gap-3 justify-center md:justify-start">
 								<button class="btn bg-white">🔑 Key </button>
 								<button class="btn bg-green-500 text-white">Mobile Friendly</button>
 							</div>
-							<div class="mb-10 w-2/3">
-								<h1 class="text-6xl text-white font-bold">Dictum vitae lectus sed gravida amet.</h1>
+							<div class="mb-10 md:w-2/3 text-center md:text-left">
+								<h1 class="text-4xl md:text-6xl text-white font-bold">Dictum vitae lectus sed gravida amet.</h1>
 							</div>
-							<div class="flex text-white gap-x-4 items-center mb-7">
+							<div class="flex text-white justify-center md:justify-start gap-x-4 items-center mb-7">
 								<div class="">
 									<img src={IMG_AVATAR} class="rounded-md inline-block" alt="" />
 									<span class="ml-1">Username</span>
@@ -46,8 +46,8 @@
 									<span class="ml-1">Valorant</span>
 								</div>
 							</div>
-							<div class="">
-								<button class="flex download-button text-white px-2 py-3 gap-2">
+							<div class="text-center md:text-left">
+								<button class="inline-flex download-button  text-white px-2 py-3 gap-2">
 									<span>Download Now</span>
 
 									<svg
@@ -81,6 +81,12 @@
 
 	<div />
 </header>
+
+<section id="add-placeholder">
+	<div class="">
+		<img src={HEADER_ADD_PLACEHOLDER} class="w-full" alt="" />
+	</div>
+</section>
 
 <style>
 	.download-button {
