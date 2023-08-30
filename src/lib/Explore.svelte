@@ -8,7 +8,9 @@
 
 <section class="">
 	<p class="font-medium text-[40px] text-center py-16">Explore Scripts</p>
-	<div class="my-container bg-[#F8F8F8] flex flex-col gap-[30px] md:!p-8 rounded-2xl">
+	<div
+		class="my-container 2xl:max-w-[1400px] 3xl:max-w-[1700px] 5xl:max-w-[2100px]  bg-[#F8F8F8] flex flex-col gap-[30px] py-8 md:!p-8 rounded-2xl"
+	>
 		<div class="flex flex-wrap justify-center md:justify-start gap-[30px] text-secondary-dark">
 			<div class="flex items-center gap-[10px]">
 				<OnOffSwitch />
@@ -54,7 +56,7 @@
 			</select>
 		</div>
 
-		<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+		<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 5xl:grid-cols-5 gap-5">
 			{#each fakeData as data, index}
 				<Card {data} />
 
@@ -64,7 +66,7 @@
 			{/each}
 		</div>
 
-		<div class="flex justify-center text-secondary-dark gap-2">
+		<div class="flex justify-center text-secondary-dark flex-wrap gap-2">
 			<button class="prev inline-flex pagination-button items-center">
 				<Icon name={'chevron-left-outline'} size="sm" class="text-gray-500 mr-2" />
 				<span>Prev</span>

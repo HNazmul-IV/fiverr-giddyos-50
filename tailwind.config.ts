@@ -1,5 +1,6 @@
 import flowbite_plugin from 'flowbite/plugin';
 import { type Config } from 'tailwindcss';
+import defaultTheme from 'tailwindcss/defaultTheme';
 import colors from 'tailwindcss/colors';
 
 export default {
@@ -9,6 +10,12 @@ export default {
 	],
 
 	theme: {
+		screens: {
+			...defaultTheme.screens,
+			'3xl': '1800px',
+			'4xl': '2000px',
+			'5xl': '2250px'
+		},
 		extend: {
 			colors: {
 				primary: colors['sky'],

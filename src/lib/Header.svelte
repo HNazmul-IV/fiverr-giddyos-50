@@ -1,10 +1,16 @@
 <script lang="ts">
-	import IMG_HERO_BG from '$assets/img/header-bg.png';
+	import IMG_HERO_BG from '$assets/img/slider-valonant.png';
 	import IMG_AVATAR from '$assets/img/user-avatar.png';
 	import HEADER_ADD_PLACEHOLDER from '$assets/img/header-adplace-holder.png';
 	import { onMount } from 'svelte';
-	import { register } from 'swiper/element/bundle';
+	import { register, type SwiperContainer, type SwiperSlide } from 'swiper/element/bundle';
+	import header_slider_data from './data/headeSliderData';
 
+	let active_slider: (typeof header_slider_data)[0] = header_slider_data[0];
+	let headerSliderContainer: SwiperContainer;
+	let swiperItem: SwiperSlide;
+
+	$: console.log(active_slider);
 	onMount(() => {
 		// Registering Svelte Custom Element;
 		register();
@@ -12,29 +18,33 @@
 </script>
 
 <header
-	class="max-w-screen h-[600px] md:h-screen bg-cover"
-	style="background-image: url({IMG_HERO_BG});"
+	class="max-w-screen h-[600px] md:h-screen bg-cover bg-black/50 bg-blend-soft-light bg-center"
+	style="background-image: url({active_slider?.background});"
 >
 	<div class="h-full">
 		<swiper-container
 			pagination={true}
+			bind:this={headerSliderContainer}
 			pagination-clickable={true}
 			navigation={true}
 			loop={true}
 			autoplay={true}
 			class="h-full md:h-screen md:py-24"
+			on:slidechange={() => {
+				active_slider = header_slider_data[headerSliderContainer.swiper.realIndex];
+			}}
 		>
-			{#each [10, 20, 30, 40] as i}
+			{#each header_slider_data as data}
 				<swiper-slide class="">
-					<div class="my-container h-full">
+					<div class="my-container 3xl:max-w-[1700px] h-full">
 						<div class=" h-full flex flex-col justify-center">
 							<div class="flex mb-10 gap-3 justify-center md:justify-start">
 								<button class="btn bg-white">🔑 Key </button>
 								<button class="btn bg-green-500 text-white">Mobile Friendly</button>
 							</div>
 							<div class="mb-10 md:w-2/3 text-center md:text-left">
-								<h1 class="text-4xl md:text-6xl text-white font-bold">
-									Dictum vitae lectus sed gravida amet.
+								<h1 class="text-4xl md:text-6xl 3xl:text-9xl text-white font-bold">
+									{data.tittle}
 								</h1>
 							</div>
 							<div
@@ -42,7 +52,7 @@
 							>
 								<div class="">
 									<img src={IMG_AVATAR} class="rounded-md inline-block" alt="" />
-									<span class="ml-1">Username</span>
+									<span class="ml-1">{data.username}</span>
 								</div>
 								<div class="">
 									<svg
@@ -106,9 +116,10 @@
 	.download-button {
 		border-radius: 10px;
 		background: linear-gradient(135deg, #fd6e6a 0%, #ffc600 100%);
+		@apply 3xl:text-2xl 3xl:px-5;
 	}
 	swiper-container::part(pagination) {
-		@apply max-w-[1270px] mx-auto   px-5 left-1/2 transform -translate-x-1/2 text-left;
+		@apply max-w-[1270px] 3xl:max-w-[1700px] mx-auto   px-5 left-1/2 transform -translate-x-1/2 text-center md:text-left;
 	}
 	swiper-container::part(bullet) {
 		@apply w-3 h-2 rounded bg-white opacity-100 transition-all;
