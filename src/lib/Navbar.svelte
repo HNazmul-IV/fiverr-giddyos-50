@@ -6,19 +6,19 @@
 	// let searchIcon = icons["search-outline"]
 </script>
 
-<nav class="w-full absolute bg-transparent text-white p-4 z-[99] max-sm:border-b-2">
+<nav class="w-full absolute bg-transparent text-white p-4 z-[99] max-md:border-b-2">
 	<div class="navbar-container flex items-center justify-between">
 		<div class="navbar-brand">
 			<h3 class="font-extrabold text-3xl mb-3">Script</h3>
 		</div>
 
 		<div
-			class="w-full sm:w-auto fixed sm:static h-full sm:h-auto z-[999] bg-black/70 sm:bg-transparent transform backdrop-blur-lg sm:backdrop-blur-0 top-0 left-0 max-sm:!p-8
-			{show_navbar ? 'translate-x-0' : '-translate-x-full sm:-translate-x-0'}
+			class="w-full md:w-auto fixed md:static h-full md:h-auto z-[999] bg-black/70 md:bg-transparent transform backdrop-blur-lg md:backdrop-blur-0 top-0 left-0 max-md:!p-8
+			{show_navbar ? 'translate-x-0' : '-translate-x-full md:-translate-x-0'}
 			"
 		>
-			<div class="navbar-item-wrapper relative p-10 sm:p-0">
-				<ul class="flex flex-col sm:flex-row">
+			<div class="navbar-item-wrapper relative p-10 md:p-0">
+				<ul class="flex flex-col md:flex-row">
 					<li><a class="py-3 inline-block px-2 xl:px-4" href="/">Explore</a></li>
 					<li><a class="py-3 inline-block px-2 xl:px-4" href="/">Trending</a></li>
 					<li><a class="py-3 inline-block px-2 xl:px-4" href="/">All Release</a></li>
@@ -41,7 +41,7 @@
 
 				<button
 					on:click={() => (show_navbar = false)}
-					class="closer sm:hidden text-white absolute top-10 right-10"
+					class="closer md:hidden text-white absolute top-0 right-0"
 				>
 					<svg
 						class="w-6 h-6 text-current"
@@ -62,31 +62,31 @@
 			</div>
 		</div>
 
-		<div class="flex items-center sm:gap-3 flex-shrink-0">
-			<label class="border border-gray-400 bg-white/30 relative flex w-16 h-7 rounded-xl">
+		<div class="flex items-center md:gap-3 flex-shrink-0 ">
+			<label class="border border-gray-400 bg-white/30 max-md:mr-3 relative flex w-16 h-7 rounded-xl">
 				<div class="absolute inset-0 flex justify-between items-center">
 					<input type="checkbox" class="sr-only peer" checked />
 					<span
-						class="peer-checked:bg-white text-secondary-dark peer-checked:text-secondary-dark h-7 aspect-square inline-flex items-center justify-center text-sm rounded-full transition duration-300 cursor-pointer"
+						class="peer-checked:bg-white text-secondary-dark peer-checked:text-secondary-dark h-7 aspect-square inline-flex items-center justify-center text-md rounded-full transition duration-300 cursor-pointer"
 					>
 						<Icon name="sun-outline" tabindex="-1" class="focus:outline-none"  />
 					</span>
 					<span
-						class="bg-zinc-500 text-white h-7 aspect-square inline-flex items-center justify-center text-sm rounded-full transition duration-300 peer-checked:bg-transparent peer-checked:text-secondary-dark cursor-pointer"
+						class="bg-zinc-500 text-white h-7 aspect-square inline-flex items-center justify-center text-md rounded-full transition duration-300 peer-checked:bg-transparent peer-checked:text-secondary-dark cursor-pointer"
 					>
 						<Icon name="moon-outline" tabindex="-1" class="focus:outline-none" />
 					</span>
 				</div>
 			</label>
 
-			<button class="btn hidden sm:block"> Login </button>
-			<Button class="bg-yellow-300 hidden sm:inline-flex">
+			<button class="btn hidden md:block"> Login </button>
+			<Button class="bg-yellow-300 hidden md:inline-flex">
 				Upload <Icon name="arrow-up-outline" class="w-3.5 h-3.5 ml-2" />
 			</Button>
 
 			<button on:click={() => (show_navbar = true)}>
 				<svg
-					class="w-6 h-6 sm:hidden"
+					class="w-6 h-6 md:hidden"
 					aria-hidden="true"
 					xmlns="http://www.w3.org/2000/svg"
 					fill="none"

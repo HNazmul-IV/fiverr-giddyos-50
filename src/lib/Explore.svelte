@@ -56,7 +56,7 @@
 			</select>
 		</div>
 
-		<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 5xl:grid-cols-5 gap-5">
+		<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 5xl:grid-cols-5 gap-5">
 			{#each fakeData as data, index}
 				<Card {data} />
 
