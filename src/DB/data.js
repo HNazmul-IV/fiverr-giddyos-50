@@ -7,8 +7,7 @@ export const fakeData = [
 			image:
 				'https://s3-alpha-sig.figma.com/img/c4ac/67d6/c53bddf51482729a4eae3f8dd2a18ad5?Expires=1694390400&Signature=bKuldJiCOeHc3WdbUPVg7CjiSV~rLtLbdhqM1nm5GT1bvp1CG8AAay-yVaBesI~AXZvMeWp3aTgFaAHpXYX8vCLOHKD-BQu-Bp1Hptgcrw7g5XjzDpEE3EywZQEMDKtcAyca3eSIuwVwdH8ApQgDACTIToZzEBZCPPQFU4vNMQUw3iLAlFZ28USfKAtdNl6seBPZVJjAmEo3ko3bfZNzwiuYp45qfwPki9OvzZJcTVcoZlyGnuRzj89Q8RI1ibjg5bGGdYCanwf1z0Ne-uUtXINlPZIhfaUQLdPGgIWuSTK8xo8KwhmNLPG0sD8m-t2APj8Z0sR2Yqt-2l7Ieopyhw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4'
 		},
-		image:
-			'https://image.winudf.com/v2/image/Y29tLmJhbmRhaW5hbWNvZ2FtZXMuZm9ydHJlc3NsZWdlbmRzX3NjcmVlbl8wXzR3cjlpdnF4/screen-0.webp?fakeurl=1&type=.webp',
+		image: 'https://i1.sndcdn.com/artworks-000658270138-v1iolx-t240x240.jpg',
 		post: 'Just reached level 50 in Fortress of Legends! 🏰🎮',
 		downloads: '56',
 		views: '1023'
